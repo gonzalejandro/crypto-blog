@@ -1,0 +1,374 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"print",
+				"print_number"
+			],
+			[
+				"res",
+				"reset"
+			],
+			[
+				"subas",
+				"subastaTask"
+			],
+			[
+				"read",
+				"ready_queue"
+			],
+			[
+				"re",
+				"ResumeNextReadyTask"
+			],
+			[
+				"get",
+				"PriGet"
+			],
+			[
+				"Get",
+				"PriGet"
+			],
+			[
+				"PU",
+				"PushTask"
+			],
+			[
+				"Push",
+				"PushTask"
+			],
+			[
+				"push",
+				"PushTask"
+			],
+			[
+				"st",
+				"status"
+			],
+			[
+				"cance",
+				"CancelTask"
+			],
+			[
+				"E",
+				"END_CRITICAL"
+			],
+			[
+				"peor",
+				"peorOfertaTask"
+			],
+			[
+				"ofer",
+				"ofertaTask"
+			],
+			[
+				"ofe",
+				"ofertaTask"
+			],
+			[
+				"Resu",
+				"ResumeNextReadyTask"
+			],
+			[
+				"rea",
+				"ready_queue"
+			],
+			[
+				"resu",
+				"ResumeNextReadyTask"
+			],
+			[
+				"Res",
+				"ResumeNextReadyTask"
+			],
+			[
+				"size",
+				"sizeof"
+			],
+			[
+				"et",
+				"etapas"
+			],
+			[
+				"nE",
+				"nEnter"
+			],
+			[
+				"de",
+				"desocupado"
+			],
+			[
+				"eta",
+				"etapas"
+			],
+			[
+				"prin",
+				"print_etapas"
+			],
+			[
+				"pri",
+				"print_etapas"
+			],
+			[
+				"fun",
+				"fun_estacionar"
+			],
+			[
+				"forw",
+				"forward"
+			],
+			[
+				"cace",
+				"cache_timeout"
+			],
+			[
+				"cache",
+				"cache_timeout"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/mr/Desktop/roadmap.md",
+		"/home/mr/Projects/beacon-random-comments/popup/choose_comment.html",
+		"/tmp/mozilla_mr0/surface3d_demo2.py",
+		"/home/mr/Projects/beacon-random-comments/manifest.json",
+		"/home/mr/Desktop/shortlink.js",
+		"/home/mr/WebstormProjects/test-extension/test.js",
+		"/home/mr/Projects/beacon-random-comments/content_scripts/interface.js",
+		"/home/mr/Projects/beacon-random-comments/popup/js/interface.js",
+		"/home/mr/Downloads/clientedummy.py",
+		"/home/mr/Desktop/test.py",
+		"/home/mr/Desktop/cumpleanos.txt",
+		"/home/mr/Desktop/lol.cpp",
+		"/home/mr/Desktop/questions.txt",
+		"/run/media/mr/3731-3231/http.txt",
+		"/home/mr/Desktop/telefonos.txt",
+		"/home/mr/Desktop/clases-cripto.txt",
+		"/home/mr/Desktop/resumen-crypto.md",
+		"/home/mr/Projects/blog/_posts/2019-03-11-CC5301-01.md",
+		"/home/mr/Downloads/CC4302_material_docente_14-05-2019/Auxiliar5/src/nMsg.c",
+		"/home/mr/Downloads/t2/README.txt",
+		"/home/mr/Downloads/t2/nsystem64-beta2/ex-subasta/test-subasta.c",
+		"/home/mr/Downloads/t2/nsystem64-beta2/src/nSysimp.h",
+		"/home/mr/Downloads/t2/nsystem64-beta2/src/nSubasta.c",
+		"/home/mr/Downloads/t2/nsystem64-beta2/src/nTime.c",
+		"/home/mr/Desktop/randomcomments.txt",
+		"/home/mr/Projects/blog/_posts/2019-03-22-CC5301-A01.md",
+		"/home/mr/Documents/Courses/CC5301/a-01.md",
+		"/home/mr/Documents/Courses/CC5301/a-02.md",
+		"/home/mr/Downloads/t2/src/nSysimp.h",
+		"/home/mr/Downloads/t2/src/nSubasta.c",
+		"/home/mr/Downloads/t2/src/Makefile",
+		"/home/mr/Downloads/nsystem64-beta2/ex-subasta/Makefile",
+		"/home/mr/Downloads/nsystem64-beta2/ex-subasta/nSysimp.h",
+		"/home/mr/Downloads/nsystem64-beta2/src/nSubasta.c",
+		"/home/mr/Downloads/nsystem64-beta2/include/nSystem.h",
+		"/home/mr/Downloads/nsystem64-beta2/src/nSysimp.h",
+		"/home/mr/Downloads/nsystem64-beta2/src/nProcess.c",
+		"/home/mr/Downloads/nsystem64-beta2/src/Makefile",
+		"/home/mr/Downloads/nsystem64-beta2/ex-subasta/test-subasta.c",
+		"/home/mr/Downloads/nsystem64-beta2/src/nTime.c",
+		"/home/mr/Downloads/t2/ex-subasta/test-subasta.c",
+		"/home/mr/Downloads/t2/ex-subasta/Makefile",
+		"/home/mr/Downloads/nsystem64-beta2/lib/README",
+		"/home/mr/Downloads/t2/include/nSystem.h",
+		"/home/mr/views.py",
+		"/home/mr/.cache/.fr-8C9YIu/download_open/background.js",
+		"/home/mr/Downloads/materialize-v1.0.0/materialize/README.md",
+		"/home/mr/Downloads/materialize-v1.0.0/materialize/LICENSE",
+		"/home/mr/Downloads/materialize-src-v1.0.0/materialize-src/README.md",
+		"/home/mr/Downloads/materialize-src-v1.0.0/materialize-src/sass/materialize.scss",
+		"/home/mr/Projects/MITM-Simplified/bytestools.py",
+		"/home/mr/Projects/MITM-Simplified/mitm.py",
+		"/home/mr/Projects/MITM-Simplified/cifrados.txt",
+		"/home/mr/Projects/MITM-Simplified/requirements.txt",
+		"/tmp/mozilla_mr0/cifrados.txt",
+		"/home/mr/Projects/DumbDNS/README.md",
+		"/home/mr/Downloads/t1/T1/cadena.c",
+		"/home/mr/Projects/DumbDNS/log.txt",
+		"/home/mr/Downloads/t1/T1/test-cadena.c",
+		"/home/mr/Downloads/t1/T1/cadena-sec.c",
+		"/home/mr/Projects/blog/assets/js/lunr.js",
+		"/home/mr/Desktop/wea.html",
+		"/home/mr/Projects/blog/_includes/share.html",
+		"/home/mr/Projects/blog/assets/js/lunrsearchengine.js",
+		"/home/mr/Projects/blog/assets/js/mediumish.js",
+		"/home/mr/Downloads/materialize-v1.0.0/materialize/js/materialize.js",
+		"/home/mr/Downloads/T1/cadena.c",
+		"/home/mr/Downloads/T1/test-cadena.c",
+		"/home/mr/Downloads/T1/cadena-sec.c",
+		"/home/mr/Downloads/nsystem64-beta2/ex-monitors/monprodcons.c",
+		"/home/mr/Downloads/T1/cadena.h",
+		"/home/mr/Downloads/T1/README.txt",
+		"/home/mr/Downloads/nsystem64-beta2/README",
+		"/home/mr/Downloads/C_digo_Auxiliar_1/tiayoli.py",
+		"/home/mr/Downloads/C_digo_Auxiliar_1/kioskitocoin_client.py",
+		"/home/mr/Downloads/C_digo_Auxiliar_1/kioskitocoin_server.py",
+		"/home/mr/Projects/DumbDNS/dumbdns.py",
+		"/home/mr/Projects/blog/_layouts/post.html",
+		"/home/mr/Projects/competitive-programming/CC4005-2018-01/Laboratorio1/b.cpp",
+		"/home/mr/Projects/beacon-random-comments/.gitignore",
+		"/home/mr/Projects/damn-dns/.gitignore",
+		"/home/mr/pareja.txt",
+		"/home/mr/Projects/competitive-programming/CC4005-2018-01/Laboratorio1/a.cpp",
+		"/home/mr/Projects/CC4005/Laboratorio1/i.cpp",
+		"/home/mr/Projects/CC4005/Laboratorio1/f.cpp",
+		"/home/mr/Projects/CC4005/Laboratorio1/h.cpp"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "404.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 149.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
