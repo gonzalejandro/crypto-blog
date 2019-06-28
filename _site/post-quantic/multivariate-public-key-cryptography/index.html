@@ -11,13 +11,13 @@
 <meta property="og:title" content="Criptografía de Llave Pública Multivariable" />
 <meta name="author" content="Alejandro González" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Blog educativo sobre Criptografía" />
-<meta property="og:description" content="Blog educativo sobre Criptografía" />
+<meta name="description" content="1. Introducción" />
+<meta property="og:description" content="1. Introducción" />
 <link rel="canonical" href="http://localhost:4000/post-quantic/multivariate-public-key-cryptography/" />
 <meta property="og:url" content="http://localhost:4000/post-quantic/multivariate-public-key-cryptography/" />
 <meta property="og:site_name" content="Crypto Blog" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Alejandro González"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/siteicon.png"},"name":"Alejandro González"},"description":"Blog educativo sobre Criptografía","@type":"Article","url":"http://localhost:4000/post-quantic/multivariate-public-key-cryptography/","headline":"Criptografía de Llave Pública Multivariable","@context":"http://schema.org"}</script>
+{"author":{"@type":"Person","name":"Alejandro González"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/siteicon.png"},"name":"Alejandro González"},"description":"1. Introducción","@type":"Article","url":"http://localhost:4000/post-quantic/multivariate-public-key-cryptography/","headline":"Criptografía de Llave Pública Multivariable","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 		<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Crypto Blog" />
@@ -90,7 +90,74 @@
 				<h3>Criptografía de Llave Pública Multivariable</h3>
 			</div>
 			<article class="content">
-				
+				<h2 id="1-introducción">1. Introducción</h2>
+
+<p>Un sistema criptográfico de llave pública multivariable (MPKC por sus 
+siglas en inglés) es un esquema de encriptación cuya llave pública está
+conformada por un sistema de polinomios multivariables. Un sistema de 
+polinomios multivariable no es más que un simple polinomio cuya forma
+viene dada por más de una variable. Por ejemplo, un posible polinomio 
+multivariable de grado dos podría ser el siguiente:</p>
+
+<script type="math/tex; mode=display">p(x,y) = x^2 + y^2 + 3xy + 4x + 7y + 2</script>
+
+<p>Dicho lo anterior, dado un conjunto compuesto de <script type="math/tex">m</script> polinomios 
+multivariable, cada uno de <script type="math/tex">n</script> variables, la llave pública de un MPKC 
+se vería de la siguiente forma:</p>
+
+<script type="math/tex; mode=display">P(x_1,...,x_n)=(p_1(x_1,...,x_n),...,p_m(x_1,...,x_n))</script>
+
+<p>Un MPKC puede ser utilizado para encriptar y/o autenticar mensajes. 
+Siendo el último uno de los usos más desarrollados teóricamente.</p>
+
+<h2 id="2-encriptación-con-mpkc">2. Encriptación con MPKC</h2>
+
+<h3 id="21-encriptación">2.1 Encriptación</h3>
+<p>Para llevar a cabo la encriptación de un mensaje utilizando un MPKC, se 
+asumirá que el texto a cifrar posee tantos símbolos como variables del
+sistema de polinomios. Formalmente, sea <script type="math/tex">M=(x_1,...,x_n)</script> el mensaje 
+que se quiere cifrar y sea <script type="math/tex">P</script> un sistema de polinomios multivariable
+compuesto de <script type="math/tex">m</script> polinomios cada uno de <script type="math/tex">n</script> variables. Para cifrar
+<script type="math/tex">M</script> basta con:</p>
+
+<script type="math/tex; mode=display">P(M) = (p_1(x_1,...,x_n),...,p_m(x_1,...,x_n)) = (c_1,...,c_m)</script>
+
+<p>Notar que los <script type="math/tex">x_i</script> de arriba representan los símbolos del mensaje 
+(y no las variables del sistema, como en la sección anterior) y que el 
+largo del texto cifrado depende de la cantidad <script type="math/tex">m</script> de polinomios.</p>
+
+<h3 id="22-desencriptación">2.2 Desencriptación</h3>
+<p>El proceso de desencriptación se necesita saber una trapdoor de manera 
+que sea víable invertir el mapeo para encontrar el texto plano</p>
+
+<script type="math/tex; mode=display">M=(x_1,...,x_n) = P^{-1}(c_1,...,c_m)</script>
+
+<p>Más adelante se hablará más con respecto a esta parte.</p>
+
+<h2 id="3-autenticación-con-mpkc">3. Autenticación con MPKC</h2>
+
+<h3 id="31-llave-pública">3.1 Llave Pública</h3>
+<p>Nuevamente, la llave pública es de la forma:</p>
+
+<script type="math/tex; mode=display">P(x_1,...,x_n)=(p_1(x_1,...,x_n),...,p_m(x_1,...,x_n))</script>
+
+<h3 id="32-llave-privada">3.2 LLave Privada</h3>
+<p>Mientras que la llave privada es una trapdoor para calcular <script type="math/tex">P^{-1}</script>.</p>
+
+<h3 id="33-firma">3.3 Firma</h3>
+<p>Ahora, para firmar, sea <script type="math/tex">(h_1,...,h_m)</script> el hash de un mensaje. Se debe
+computar:</p>
+
+<script type="math/tex; mode=display">(x_1,...,x_n) = P^{-1}(h_1,...,h_m)</script>
+
+<p>Finalmente, se retorna el vector <script type="math/tex">(x_1,...,x_n)</script></p>
+
+<h3 id="34-verificación">3.4 Verificación</h3>
+<p>Simplemente se debe chequear que:</p>
+
+<script type="math/tex; mode=display">(h_1,...,h_m) = P(x_1,...,x_n)</script>
+
+<h2 id="4-seguridad-de-mpkc">4. Seguridad de MPKC</h2>
 
 			</article>
 		</section>
