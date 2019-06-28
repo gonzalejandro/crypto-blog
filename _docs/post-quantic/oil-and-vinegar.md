@@ -48,3 +48,9 @@ Teniendo en cuenta lo anterior, podemos definir las llaves publicas y privadas c
  - Llave privada: set de polinomios cuadraticos $$\overline{P}$$ y las transformaciones afines $$L_{1}$$ y $$L_{2}$$.
 
 La idea es utilizar la clave privada para firmar algun mensaje $$y$$, y utilizar la dificultad del problema MQ para que no se pueda falsificar una firma a traves de la llave publica $$P$$. Con esto solo falta definir $$\overline{P}$$ para ser utilizado como la llave privada.
+
+La construccion de los polinomios en el set $$\overline{P}$$ se basa en separar las variables en dos conjuntos, las variables oil y vinegar, y definir el polinomio de forma especial. Sean las variables oil $$X = (x_{1}, ..., x_{o})$$ y las variables vinegar $$Z = (z_{1}, ..., z_{v})$$, tal que $$n = o + v$$, el polinomio $$p_{i} \in \overline{P}$$ esta definido como:
+
+\begin{equation}
+	p_{i}(X, Z) = \sum\limits_{h=1}^o \sum\limits_{j=1}^v \alpha_{h,j}^{(i)}x_{h}z_{j} + \sum\limits_{j=1}^v \beta_{j}^{(i)}z_{j}^{2}
+\end{equation}
