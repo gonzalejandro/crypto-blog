@@ -40,9 +40,9 @@ Una vez definido el set de polinomios $$\overline{P}$$, las transformaciones afi
 
  2. Firma
  Se mantiene la idea de calcular la firma a partir de resolver las mismas ecuaciones que en UOV:
-  1. Calcular $$\hat{Y}$$, con $$\hat{Y} = L_{1}^{-1}Y$$
-  2. Calcular $$\hat{X}$$, con $$\overline{P}(\hat{X}) = \hat{Y}$$
-  3. Calcular $$X$$, con $$X = L_{2}^{-1} \hat{X}$$
+	- Calcular $$\hat{Y}$$, con $$\hat{Y} = L_{1}^{-1}Y$$
+	- Calcular $$\hat{X}$$, con $$\overline{P}(\hat{X}) = \hat{Y}$$
+	- Calcular $$X$$, con $$X = L_{2}^{-1} \hat{X}$$
 
  Donde $$X$$ es la firma del mensaje $$Y$$. Es en la parte 2 del calculo de la firma la cual tiene una gran diferencia con BOV y UOV.
 
