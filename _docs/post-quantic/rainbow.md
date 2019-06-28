@@ -45,3 +45,23 @@ Una vez definido el set de polinomios $$\overline{P}$$, las transformaciones afi
   3. Calcular $$X$$, con $$X = L_{2}^{-1} \hat{X}$$
 
  Donde $$X$$ es la firma del mensaje $$Y$$. Es en la parte 2 del calculo de la firma la cual tiene una gran diferencia con BOV y UOV.
+
+ Como se dijo anteriormente, la idea de Rainbow es aplicar UOV capa por capa, para ello definimos los valores $$v_{i}$$, $$1 \leq i \leq u$$, con $$u-1$$ la cantidad de capas en Rainbow, y donde los valores $$v_{i}$$ cumplen
+
+ \begin{equation}
+ 	0 \lt v_{1} \lt ... \lt v_{u} = n
+ \end{equation}
+
+ Adicionalmente, definimos los valores $$o_{i}$$, $$1 \leq i \leq u$$, de forma tal que
+
+ \begin{equation}
+ 	o_{i} = v_{i+1} - v_{i}
+ \end{equation}
+
+ A partir de los valores definidos anteriormente, podemos definir lo que son las capas dentro del esquema:
+  1. El esquema posee $$u-1$$ capas.
+  2. La i-esima capa esta compuesta por $$o_{i}$$ polinomios.
+  3. Todos los polinomios dentro de la i-esima capa tienen $$v_{i+1}$$ variables, donde las primeras $$v_{i}$$ corresponde a variables vinegar y las siguientes o_{i} variables son variables oil.
+  4. Las $$v_{i+1}$$ variables dentro de la i-esima capa, son variables vinegar dentro de la (i+1)-esima capa.
+
+ Con las capas ya definidas, podemos explicar el procedimiento con el cual se resuelve la ecuacion $$\overline{P}(\hat{X}) = \hat{Y}
