@@ -72,3 +72,33 @@ Una vez definido el set de polinomios $$\overline{P}$$, las transformaciones afi
  \begin{equation}
  	L_{1} \circ \overline{P} \circ L_{2} (X) = Y
  \end{equation}
+
+ Primero, invertimos la transformacion afin $$L_{1}$$, con lo cual tenemos
+
+ \begin{equation}
+ 	\hat{Y} = L_{1}^{-1}(Y)
+ \end{equation}
+
+ Ahora, necesitamos encontrar un $$\hat{X}$$ tal que
+
+ \begin{equation}
+ 	\overline{P}(\hat{X}) = \hat{Y}
+ \end{equation}
+
+ Para ello, nos aprovechamos de la construccion de los polinomios en $$\overline{P}$$ y como interactuan las variables oil y vinegar, para lo cual, elegimos valores aleatorios dentro del espacio finito que asignamos a las variables vinegar. Producto de la construccion de los polinomios, el asignar valores a las variables vinegar produce que los polinomios pase a ser polinomios multivariables lineales, los cuales son posibles de resolver (eliminacion gaussiana) con una alta probabilidad (en el caso que no se pueda resolver, se repite el proceso)
+
+ Finalmente, una vez obtenido un valor para $$\hat{X}$$, invertimos la ultima transformacion, con lo cual
+
+ \begin{equation}
+ 	X = L_{2}^{-1}(\hat{X})
+ \end{equation}
+
+ siendo $$X$$ la firma del mensaje $$Y$$.
+
+# Unbalanced Oil and Vinegar
+
+Si bien el esquema BOV a primera vista pareciera ser muy robusto, este no es el caso, ya que fue quebrado poco despues de ser propuesto. Este ataque (Kipnis & Shamir) se aprovecho de la igualdad $$o = v$$, logrando recuperar una copia isomorfa de la clave privada.
+
+Frente a este ataque se tiene dos opciones, elegimos $$o \lt v$$ o $$o \gt v$$. El segundo caso no es posible, ya que se puede utilizar el mismo ataque para lograr obtener la clave, mientras que, la primera opcion, si bien puede ser atacada, este seria una versión probabilistica del ataque original, y su complejidad es del orden $$q^{v-o-1}o^{4}$$, siendo $$q$$ el tamaño del espacio finito.
+
+Eligiendo el segundo caso, llegamos a la variante Unbalanced Oil and Vinegar, la cual tiene $$o \lt v$$, siendo la diferencia entre ambos lo suficiente como para que el ataque anterior no sea factible.
