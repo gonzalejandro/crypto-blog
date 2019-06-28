@@ -44,8 +44,8 @@ El esquema BOV se basa en la dificultad de los problemas MQ e IP, para ello defi
 \end{equation}
 
 Teniendo en cuenta lo anterior, podemos definir las llaves publicas y privadas como:
- - Llave publica: set de polinomios $$P$$
- - Llave privada: set de polinomios cuadraticos $$\overline{P}$$ y las transformaciones afines $$L_{1}$$ y $$L_{2}$$.
+ - Llave publica: set de polinomios cuadraticos $$P$$
+ - Llave privada: set de polinomios cuadraticos $$\overline{P}$$, y las transformaciones afines $$L_{1}$$ y $$L_{2}$$.
 
 La idea es utilizar la clave privada para firmar algun mensaje $$y$$, y utilizar la dificultad del problema MQ para que no se pueda falsificar una firma a traves de la llave publica $$P$$. Con esto solo falta definir $$\overline{P}$$ para ser utilizado como la llave privada.
 
@@ -55,7 +55,7 @@ La construccion de los polinomios en el set $$\overline{P}$$ se basa en separar 
 	p_{i}(X, Z) = \sum\limits_{h=1}^o \sum\limits_{j=1}^v \alpha_{h,j}^{(i)}x_{h}z_{j} + \sum\limits_{j=1}^v (\beta_{j}^{(i)}z_{j}^{2} + \gamma_{j}^{(i)}z_{j}) + \sum\limits_{h=1}^o \delta_{h}^{(i)}x_{h} + \eta^{(i)}
 \end{equation}
 
-### Firma y verificación
+## Firma y verificación
 
 Una vez definido el set de polinomios $$\overline{P}$$, las transformaciones afines $$L_{1}$$ y $$L_{2}$$, y la llave publica $$P = L_{1} \circ \overline{P} \circ L_{2}$$, podemos empezar a definir el proceso de firma y verificacion.
 
@@ -99,6 +99,9 @@ Una vez definido el set de polinomios $$\overline{P}$$, las transformaciones afi
 
 Si bien el esquema BOV a primera vista pareciera ser muy robusto, este no es el caso, ya que fue quebrado poco despues de ser propuesto. Este ataque (Kipnis & Shamir) se aprovecho de la igualdad $$o = v$$, logrando recuperar una copia isomorfa de la clave privada.
 
-Frente a este ataque se tiene dos opciones, elegimos $$o \lt v$$ o $$o \gt v$$. El segundo caso no es posible, ya que se puede utilizar el mismo ataque para lograr obtener la clave, mientras que, la primera opcion, si bien puede ser atacada, este seria una versión probabilistica del ataque original, y su complejidad es del orden $$q^{v-o-1}o^{4}$$, siendo $$q$$ el tamaño del espacio finito.
+Frente a este ataque se tiene dos opciones, elegimos $$o \lt v$$ ó $$o \gt v$$. El segundo caso no es posible, ya que se puede utilizar el mismo ataque para lograr obtener la clave, mientras que, la primera opcion, si bien puede ser atacada, este seria una versión probabilistica del ataque original, y su complejidad es del orden $$O(q^{v-o-1}o^{4})$$, siendo $$q$$ el tamaño del espacio finito.
 
 Eligiendo el segundo caso, llegamos a la variante Unbalanced Oil and Vinegar, la cual tiene $$o \lt v$$, siendo la diferencia entre ambos lo suficiente como para que el ataque anterior no sea factible.
+
+Ahora, teniendo un esquema que es seguro (hasta el momento), nos falta responder la pregunta ¿Es eficiente este esquema?, y la respuesta es no, este esquema no es eficiente en el sentido del tamaño de las claves. Es facil ver que, solo en la llave privada, esta es del orden de $$O(n^{2})$$ en memoria para $$L_{1}$$, $$O_{m^{2}}$$ para $$L_{2}$$ y $$O_{mn^{2}}$$ para el set de polinomios $$\overline{P}$$.
+Sabiendo lo anterior, ¿Se podra mejorar este esquema criptografico?
