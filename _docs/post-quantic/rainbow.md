@@ -81,4 +81,16 @@ Una vez definido el set de polinomios $$\overline{P}$$, las transformaciones afi
 
 ## Tamaño de la firma
 
-Como se dijo, uno de los objetivos del esquema Rainbow, es el de disminuir el tamaño de la firma $$X$$ para un mensaje $$Y$$ de tamaño $$m$$, para comprobar esto, consideremos que la cantidad total de polinomios presentes en el set de polinomios $$\overline{P}$$
+Como se dijo, uno de los objetivos del esquema Rainbow, es el de disminuir el tamaño de la firma $$X$$ para un mensaje $$Y$$ de tamaño $$m$$, para comprobar esto, consideremos que la cantidad total de polinomios presentes en el set de polinomios $$\overline{P}$$ es igual que $$m$$, pero que la cantidad de polinomios en la capa i-esima es $$o_{i}$$, con lo cual
+
+\begin{equation}
+	\sum\limits_{i=1}^{u-1} o_{i} = m
+\end{equation}
+
+pero sabemos que 
+
+\begin{equation}
+	\sum\limits_{i=1}^{u-1} o_{i} = \sum\limits_{i=1}^{u-1} (v_{i+1} - v_{i}) = n - v_{1}
+\end{equation}
+
+con lo cual $$n - v_{1} = m$$, lo cual implica que el tamaño de la firma es $$m + v_{i}$$, lo cual es mucho menor que el tamaño de firma utilizado en los esquemas BOV y UOV.
