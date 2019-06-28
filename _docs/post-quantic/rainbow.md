@@ -27,5 +27,5 @@ Entonces las llaves privadas y publicas son:
  - Llave publica: set de polinomios cuadraticos $$P$$.
  - Llave privada: set de polinomios cuadraticos $$\overline{P}$$, y las transformaciones afines $$L_{1}$$ y $$L_{2}$$.
 
-# Firma y verificacion
+## Firma y verificacion
 
