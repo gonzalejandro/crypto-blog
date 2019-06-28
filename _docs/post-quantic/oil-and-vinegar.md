@@ -103,5 +103,5 @@ Frente a este ataque se tiene dos opciones, elegimos $$o \lt v$$ ó $$o \gt v$$.
 
 Eligiendo el segundo caso, llegamos a la variante Unbalanced Oil and Vinegar, la cual tiene $$o \lt v$$, siendo la diferencia entre ambos lo suficiente como para que el ataque anterior no sea factible.
 
-Ahora, teniendo un esquema que es seguro (hasta el momento), nos falta responder la pregunta ¿Es eficiente este esquema?, y la respuesta es no, este esquema no es eficiente en el sentido del tamaño de las claves. Es facil ver que, solo en la llave privada, esta es del orden de $$O(n^{2})$$ en memoria para $$L_{1}$$, $$O(m^{2})$$ para $$L_{2}$$ y $$O(mn^{2}})$$ para el set de polinomios $$\overline{P}$$.
+Ahora, teniendo un esquema que es seguro (hasta el momento), nos falta responder la pregunta ¿Es eficiente este esquema?, y la respuesta es no, este esquema no es eficiente en el sentido del tamaño de las claves. Es facil ver que, solo en la llave privada, esta es del orden de $$O(n^{2})$$ en memoria para $$L_{1}$$, $$O(m^{2})$$ para $$L_{2}$$ y $$O(mn^{2})$$ para el set de polinomios $$\overline{P}$$.
 Sabiendo lo anterior, ¿Se podra mejorar este esquema criptografico?
