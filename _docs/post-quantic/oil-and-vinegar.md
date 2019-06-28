@@ -59,14 +59,14 @@ La construccion de los polinomios en el set $$\overline{P}$$ se basa en separar 
 
 Una vez definido el set de polinomios $$\overline{P}$$, las transformaciones afines $$L_{1}$$ y $$L_{2}$$, y la llave publica $$P = L_{1} \circ \overline{P} \circ L_{2}$$, podemos empezar a definir el proceso de firma y verificacion.
 
- 1. Verificacion
+ 1. Verificacion<br>
  Dado un mensaje $$Y = (y_{1}, ..., y{m})$$ y una firma $$X = (x_{1}, ..., x{n})$$, verificar si la firma corresponde al mensaje, basta con determinar si:
 
  \begin{equation}
  	P(X) = Y
  \end{equation}
 
- 2. Firma
+ 2. Firma<br>
  El proceso de firma es un poco mas complejo, dado que tenemos el mensaje $$Y$$, queremos encontrar una firma $$X$$ tal que:
 
  \begin{equation}

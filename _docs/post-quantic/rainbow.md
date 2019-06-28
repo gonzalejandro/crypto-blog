@@ -31,14 +31,14 @@ Entonces las llaves privadas y publicas son:
 
 Una vez definido el set de polinomios $$\overline{P}$$, las transformaciones afines $$L_{1}$$ y $$L_{2}$$, y la llave publica $$P = L_{1} \circ \overline{P} \circ L_{2}$$, podemos empezar a definir el proceso de firma y verificacion.
 
- 1. Verificación
+ 1. Verificación<br>
  Al igual que en BOV y UOV, la verificacion de una firma $$X$$ y un mensaje $$Y$$ se realiza al evaluar la firma con la llave publica, y comprobar la igualdad
 
  \begin{equation}
  	P(X) = Y
  \end{equation}
 
- 2. Firma
+ 2. Firma<br>
  Se mantiene la idea de calcular la firma a partir de resolver las mismas ecuaciones que en UOV:
 	- Calcular $$\hat{Y}$$, con $$\hat{Y} = L_{1}^{-1}Y$$
 	- Calcular $$\hat{X}$$, con $$\overline{P}(\hat{X}) = \hat{Y}$$
@@ -64,4 +64,5 @@ Una vez definido el set de polinomios $$\overline{P}$$, las transformaciones afi
   3. Todos los polinomios dentro de la i-esima capa tienen $$v_{i+1}$$ variables, donde las primeras $$v_{i}$$ corresponde a variables vinegar y las siguientes o_{i} variables son variables oil.
   4. Las $$v_{i+1}$$ variables dentro de la i-esima capa, son variables vinegar dentro de la (i+1)-esima capa.
 
- Con las capas ya definidas, podemos explicar el procedimiento con el cual se resuelve la ecuacion $$\overline{P}(\hat{X}) = \hat{Y}
+ Con las capas ya definidas, podemos explicar el procedimiento con el cual se resuelve la ecuacion $$\overline{P}(\hat{X}) = \hat{Y}$$. El procedimiento consiste en ir capa por capa resolviendo un sistema de ecuaciones del tipo visto en BOV y UOV.
+
