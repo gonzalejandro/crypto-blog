@@ -2,16 +2,16 @@
 # Site
 
 title: Crypto Blog
-url: "https://gonzalejandro.github.io/crypto-blog/"
+url: "https://www.cryptography.cl/"
 baseurl:
 google_analytics_key:
 show_full_navigation: true
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
-description: Blog educativo sobre Criptografía
+description: Blog sobre criptografía
 author:
-  name: Alejandro González
+  name: Alejandro González y Thibault Swysen
   email:
   twitter: # twitter username without the @ symbol
 social:

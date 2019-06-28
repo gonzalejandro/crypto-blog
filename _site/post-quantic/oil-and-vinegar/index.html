@@ -9,15 +9,15 @@
 <title>Oil and Vinegar | Crypto Blog</title>
 <meta name="generator" content="Jekyll v3.8.4" />
 <meta property="og:title" content="Oil and Vinegar" />
-<meta name="author" content="Alejandro González" />
+<meta name="author" content="Alejandro González y Thibault Swysen" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Dentro de los esquemas de encriptacion en base a polinomios multivariables, Unbalanced Oil and Vinegar (UOV) es uno de los mas conocidos, principalmente porque aun no se a diseñado un ataque que pueda romperlo. Por otro lado, el esquema original, Oil and Vinegar o Balanced Oil and Vinegar (BOV), fue quebrado poco tiempo despues de ser propuesto." />
-<meta property="og:description" content="Dentro de los esquemas de encriptacion en base a polinomios multivariables, Unbalanced Oil and Vinegar (UOV) es uno de los mas conocidos, principalmente porque aun no se a diseñado un ataque que pueda romperlo. Por otro lado, el esquema original, Oil and Vinegar o Balanced Oil and Vinegar (BOV), fue quebrado poco tiempo despues de ser propuesto." />
+<meta name="description" content="Dentro de los esquemas de criptograficos en base a polinomios multivariables, el esquema de autenticacion Unbalanced Oil and Vinegar (UOV) es uno de los mas conocidos, principalmente porque aun no se a diseñado un ataque que pueda romperlo. Por otro lado, el esquema original, Oil and Vinegar o Balanced Oil and Vinegar (BOV), fue quebrado poco tiempo despues de ser propuesto." />
+<meta property="og:description" content="Dentro de los esquemas de criptograficos en base a polinomios multivariables, el esquema de autenticacion Unbalanced Oil and Vinegar (UOV) es uno de los mas conocidos, principalmente porque aun no se a diseñado un ataque que pueda romperlo. Por otro lado, el esquema original, Oil and Vinegar o Balanced Oil and Vinegar (BOV), fue quebrado poco tiempo despues de ser propuesto." />
 <link rel="canonical" href="http://localhost:4000/post-quantic/oil-and-vinegar/" />
 <meta property="og:url" content="http://localhost:4000/post-quantic/oil-and-vinegar/" />
 <meta property="og:site_name" content="Crypto Blog" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Alejandro González"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/siteicon.png"},"name":"Alejandro González"},"description":"Dentro de los esquemas de encriptacion en base a polinomios multivariables, Unbalanced Oil and Vinegar (UOV) es uno de los mas conocidos, principalmente porque aun no se a diseñado un ataque que pueda romperlo. Por otro lado, el esquema original, Oil and Vinegar o Balanced Oil and Vinegar (BOV), fue quebrado poco tiempo despues de ser propuesto.","@type":"Article","url":"http://localhost:4000/post-quantic/oil-and-vinegar/","headline":"Oil and Vinegar","@context":"http://schema.org"}</script>
+{"author":{"@type":"Person","name":"Alejandro González y Thibault Swysen"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/siteicon.png"},"name":"Alejandro González y Thibault Swysen"},"description":"Dentro de los esquemas de criptograficos en base a polinomios multivariables, el esquema de autenticacion Unbalanced Oil and Vinegar (UOV) es uno de los mas conocidos, principalmente porque aun no se a diseñado un ataque que pueda romperlo. Por otro lado, el esquema original, Oil and Vinegar o Balanced Oil and Vinegar (BOV), fue quebrado poco tiempo despues de ser propuesto.","@type":"Article","url":"http://localhost:4000/post-quantic/oil-and-vinegar/","headline":"Oil and Vinegar","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 		<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Crypto Blog" />
@@ -67,6 +67,8 @@
 								
 									<li class="nav-item "><a href="/post-quantic/rainbow/">Rainbow</a></li>
 								
+									<li class="nav-item "><a href="/post-quantic/rainbow-implementation/">Implementación de Rainbow en el Lenguaje Kotlin</a></li>
+								
 							</ul>
 						</li>
 					
@@ -90,17 +92,17 @@
 				<h3>Oil and Vinegar</h3>
 			</div>
 			<article class="content">
-				<p>Dentro de los esquemas de encriptacion en base a polinomios multivariables, Unbalanced Oil and Vinegar (UOV) es uno de los mas conocidos, principalmente porque aun no se a diseñado un ataque que pueda romperlo. Por otro lado, el esquema original, Oil and Vinegar o Balanced Oil and Vinegar (BOV), fue quebrado poco tiempo despues de ser propuesto.</p>
+				<p>Dentro de los esquemas de criptograficos en base a polinomios multivariables, el esquema de autenticacion Unbalanced Oil and Vinegar (UOV) es uno de los mas conocidos, principalmente porque aun no se a diseñado un ataque que pueda romperlo. Por otro lado, el esquema original, Oil and Vinegar o Balanced Oil and Vinegar (BOV), fue quebrado poco tiempo despues de ser propuesto.</p>
 
 <p>En esta seccion nos concentraremos en explicar como funcionan BOV y su version modificada UOV.</p>
 
-<h2 id="balanced-oil-and-vinegar">Balanced Oil and Vinegar</h2>
+<h1 id="balanced-oil-and-vinegar">Balanced Oil and Vinegar</h1>
 
 <p>La idea de este esquema proviene de un ataque, realizado sobre un esquema tambien basado en polinomios multivariables, el esquema Matsumoto-Imai, siendo esta idea la linearizacion de ecuaciones.</p>
 
 <p>El esquema BOV se basa principalmente en dos problemas, MQ e IP:</p>
 <ul>
-  <li>Dado <script type="math/tex">Y</script> y un conjunto de polinomios cuadraticos multivariables <script type="math/tex">P</script> tal que</li>
+  <li>Dado <script type="math/tex">Y</script> y un set de polinomios cuadraticos multivariables <script type="math/tex">P</script> tal que</li>
 </ul>
 
 <p>\begin{equation}
@@ -116,8 +118,91 @@
 <p>MQ-problem es NP-completo.</p>
 
 <ul>
-  <li>IP-problem hace referencia al problema de, dado el conjunto de polinomios <script type="math/tex">P</script> y <script type="math/tex">\overline{P}</script>, encontrar un par de transformaciones afines <script type="math/tex">L_{1}</script> y <script type="math/tex">L_{2}</script> es un problema dificil.</li>
+  <li>Sean dos set de polinomios, <script type="math/tex">P</script> y <script type="math/tex">\overline{P}</script>, de <script type="math/tex">m</script> polinomios y <script type="math/tex">n</script> variables, el IP-problem consiste en encontras dos transformaciones lineales afines, <script type="math/tex">L_{1}</script> y <script type="math/tex">L_{2}</script>, tales que</li>
 </ul>
+
+<p>\begin{equation}
+ 	P = L_{1} \circ \overline{P} \circ L_{2}
+ \end{equation}</p>
+
+<p>No se cree que este problema se pueda solucionar en tiempo polinomial, pero tampoco pertenece a la clase NP-hard.</p>
+
+<h2 id="construccion">Construccion</h2>
+
+<p>El esquema BOV se basa en la dificultad de los problemas MQ e IP, para ello define dos sets de polinomios, <script type="math/tex">P</script> y <script type="math/tex">\overline{P}</script>, donde ambos sets continen <script type="math/tex">m</script> polinomios multivariables cuadraticos de <script type="math/tex">n</script> variables, donde <script type="math/tex">P</script> puede contener cualquier polinomio, pero <script type="math/tex">\overline{P}</script> contiene polinomios especiales, los cuales facilitaran el uso de la llave privada. La relacion entre estos dos sets de polinomios esta dada por las transformaciones afines invertibles <script type="math/tex">L_{1}</script> y <script type="math/tex">L_{2}</script> tal que:</p>
+
+<p>\begin{equation}
+	P = L_{1} \circ \overline{P} \circ L_{2}
+\end{equation}</p>
+
+<p>Teniendo en cuenta lo anterior, podemos definir las llaves publicas y privadas como:</p>
+<ul>
+  <li>Llave publica: set de polinomios cuadraticos <script type="math/tex">P</script></li>
+  <li>Llave privada: set de polinomios cuadraticos <script type="math/tex">\overline{P}</script>, y las transformaciones afines <script type="math/tex">L_{1}</script> y <script type="math/tex">L_{2}</script>.</li>
+</ul>
+
+<p>La idea es utilizar la clave privada para firmar algun mensaje <script type="math/tex">y</script>, y utilizar la dificultad del problema MQ para que no se pueda falsificar una firma a traves de la llave publica <script type="math/tex">P</script>. Con esto solo falta definir <script type="math/tex">\overline{P}</script> para ser utilizado como la llave privada.</p>
+
+<p>La construccion de los polinomios en el set <script type="math/tex">\overline{P}</script> se basa en separar las variables en dos conjuntos, las variables oil y vinegar, y definir el polinomio de forma especial. Sean las variables oil <script type="math/tex">X = (x_{1}, ..., x_{o})</script> y las variables vinegar <script type="math/tex">Z = (z_{1}, ..., z_{v})</script>, tal que <script type="math/tex">n = o + v</script> y <script type="math/tex">o = v</script>, el polinomio <script type="math/tex">p_{i} \in \overline{P}</script> esta definido como:</p>
+
+<p>\begin{equation}
+	p_{i}(X, Z) = \sum\limits_{h=1}^o \sum\limits_{j=1}^v \alpha_{h,j}^{(i)}x_{h}z_{j} + \sum\limits_{j=1}^v (\beta_{j}^{(i)}z_{j}^{2} + \gamma_{j}^{(i)}z_{j}) + \sum\limits_{h=1}^o \delta_{h}^{(i)}x_{h} + \eta^{(i)}
+\end{equation}</p>
+
+<h2 id="firma-y-verificación">Firma y verificación</h2>
+
+<p>Una vez definido el set de polinomios <script type="math/tex">\overline{P}</script>, las transformaciones afines <script type="math/tex">L_{1}</script> y <script type="math/tex">L_{2}</script>, y la llave publica <script type="math/tex">P = L_{1} \circ \overline{P} \circ L_{2}</script>, podemos empezar a definir el proceso de firma y verificacion.</p>
+
+<ol>
+  <li>Verificacion
+ Dado un mensaje <script type="math/tex">Y = (y_{1}, ..., y{m})</script> y una firma <script type="math/tex">X = (x_{1}, ..., x{n})</script>, verificar si la firma corresponde al mensaje, basta con determinar si:</li>
+</ol>
+
+<p>\begin{equation}
+ 	P(X) = Y
+ \end{equation}</p>
+
+<ol>
+  <li>Firma
+ El proceso de firma es un poco mas complejo, dado que tenemos el mensaje <script type="math/tex">Y</script>, queremos encontrar una firma <script type="math/tex">X</script> tal que:</li>
+</ol>
+
+<p>\begin{equation}
+ 	L_{1} \circ \overline{P} \circ L_{2} (X) = Y
+ \end{equation}</p>
+
+<p>Primero, invertimos la transformacion afin <script type="math/tex">L_{1}</script>, con lo cual tenemos</p>
+
+<p>\begin{equation}
+ 	\hat{Y} = L_{1}^{-1}(Y)
+ \end{equation}</p>
+
+<p>Ahora, necesitamos encontrar un <script type="math/tex">\hat{X}</script> tal que</p>
+
+<p>\begin{equation}
+ 	\overline{P}(\hat{X}) = \hat{Y}
+ \end{equation}</p>
+
+<p>Para ello, nos aprovechamos de la construccion de los polinomios en <script type="math/tex">\overline{P}</script> y como interactuan las variables oil y vinegar, para lo cual, elegimos valores aleatorios dentro del espacio finito que asignamos a las variables vinegar. Producto de la construccion de los polinomios, el asignar valores a las variables vinegar produce que los polinomios pase a ser polinomios multivariables lineales, los cuales son posibles de resolver (eliminacion gaussiana) con una alta probabilidad (en el caso que no se pueda resolver, se repite el proceso)</p>
+
+<p>Finalmente, una vez obtenido un valor para <script type="math/tex">\hat{X}</script>, invertimos la ultima transformacion, con lo cual</p>
+
+<p>\begin{equation}
+ 	X = L_{2}^{-1}(\hat{X})
+ \end{equation}</p>
+
+<p>siendo <script type="math/tex">X</script> la firma del mensaje <script type="math/tex">Y</script>.</p>
+
+<h1 id="unbalanced-oil-and-vinegar">Unbalanced Oil and Vinegar</h1>
+
+<p>Si bien el esquema BOV a primera vista pareciera ser muy robusto, este no es el caso, ya que fue quebrado poco despues de ser propuesto. Este ataque (Kipnis &amp; Shamir) se aprovecho de la igualdad <script type="math/tex">o = v</script>, logrando recuperar una copia isomorfa de la clave privada.</p>
+
+<p>Frente a este ataque se tiene dos opciones, elegimos <script type="math/tex">o \lt v</script> ó <script type="math/tex">o \gt v</script>. El segundo caso no es posible, ya que se puede utilizar el mismo ataque para lograr obtener la clave, mientras que, la primera opcion, si bien puede ser atacada, este seria una versión probabilistica del ataque original, y su complejidad es del orden <script type="math/tex">O(q^{v-o-1}o^{4})</script>, siendo <script type="math/tex">q</script> el tamaño del espacio finito.</p>
+
+<p>Eligiendo el segundo caso, llegamos a la variante Unbalanced Oil and Vinegar, la cual tiene <script type="math/tex">o \lt v</script>, siendo la diferencia entre ambos lo suficiente como para que el ataque anterior no sea factible.</p>
+
+<p>Ahora, teniendo un esquema que es seguro (hasta el momento), nos falta responder la pregunta ¿Es eficiente este esquema?, y la respuesta es no, este esquema no es eficiente en el sentido del tamaño de las claves. Es facil ver que, solo en la llave privada, esta es del orden de <script type="math/tex">O(n^{2})</script> en memoria para <script type="math/tex">L_{1}</script>, <script type="math/tex">O(m^{2})</script> para <script type="math/tex">L_{2}</script> y <script type="math/tex">O(mn^{2}})</script> para el set de polinomios <script type="math/tex">\overline{P}</script>.
+Sabiendo lo anterior, ¿Se podra mejorar este esquema criptografico?</p>
 
 			</article>
 		</section>

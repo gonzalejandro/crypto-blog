@@ -9,15 +9,15 @@
 <title>Search | Crypto Blog</title>
 <meta name="generator" content="Jekyll v3.8.4" />
 <meta property="og:title" content="Search" />
-<meta name="author" content="Alejandro González" />
+<meta name="author" content="Alejandro González y Thibault Swysen" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Blog educativo sobre Criptografía" />
-<meta property="og:description" content="Blog educativo sobre Criptografía" />
+<meta name="description" content="Blog sobre criptografía" />
+<meta property="og:description" content="Blog sobre criptografía" />
 <link rel="canonical" href="http://localhost:4000/search/" />
 <meta property="og:url" content="http://localhost:4000/search/" />
 <meta property="og:site_name" content="Crypto Blog" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Alejandro González"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/siteicon.png"},"name":"Alejandro González"},"description":"Blog educativo sobre Criptografía","@type":"WebPage","url":"http://localhost:4000/search/","headline":"Search","@context":"http://schema.org"}</script>
+{"author":{"@type":"Person","name":"Alejandro González y Thibault Swysen"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/siteicon.png"},"name":"Alejandro González y Thibault Swysen"},"description":"Blog sobre criptografía","@type":"WebPage","url":"http://localhost:4000/search/","headline":"Search","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 		<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Crypto Blog" />
@@ -66,6 +66,8 @@
 									<li class="nav-item "><a href="/post-quantic/oil-and-vinegar/">Oil and Vinegar</a></li>
 								
 									<li class="nav-item "><a href="/post-quantic/rainbow/">Rainbow</a></li>
+								
+									<li class="nav-item "><a href="/post-quantic/rainbow-implementation/">Implementación de Rainbow en el Lenguaje Kotlin</a></li>
 								
 							</ul>
 						</li>
@@ -140,7 +142,24 @@
 						"title": "Oil and Vinegar",
 						"category": "",
 						"url": " /post-quantic/oil-and-vinegar/",
-						"content": "Dentro de los esquemas de encriptacion en base a polinomios multivariables, Unbalanced Oil and Vinegar (UOV) es uno de los mas conocidos, principalmente porque aun no se a diseñado un ataque que pueda romperlo. Por otro lado, el esquema original, Oil and Vinegar o Balanced Oil and Vinegar (BOV), fue quebrado poco tiempo despues de ser propuesto. En esta seccion nos concentraremos en explicar como funcionan BOV y su version modificada UOV. Balanced Oil and Vinegar La idea de este esquema proviene de un ataque, realizado sobre un esquema tambien basado en polinomios multivariables, el esquema Matsumoto-Imai, siendo esta idea la linearizacion de ecuaciones. El esquema BOV se basa principalmente en dos problemas, MQ e IP: Dado y un conjunto de polinomios cuadraticos multivariables tal que \\begin{equation} P(X) = (p_{1}(X), …, p_{m}(X)) \\end{equation} con un vector de variables. El MQ-problem consiste en encontrar tal que \\begin{equation} P(X) = (p_{1}(X), …, p_{m}(X)) = Y \\end{equation} MQ-problem es NP-completo. IP-problem hace referencia al problema de, dado el conjunto de polinomios y , encontrar un par de transformaciones afines y es un problema dificil."
+						"content": "Dentro de los esquemas de criptograficos en base a polinomios multivariables, el esquema de autenticacion Unbalanced Oil and Vinegar (UOV) es uno de los mas conocidos, principalmente porque aun no se a diseñado un ataque que pueda romperlo. Por otro lado, el esquema original, Oil and Vinegar o Balanced Oil and Vinegar (BOV), fue quebrado poco tiempo despues de ser propuesto. En esta seccion nos concentraremos en explicar como funcionan BOV y su version modificada UOV. Balanced Oil and Vinegar La idea de este esquema proviene de un ataque, realizado sobre un esquema tambien basado en polinomios multivariables, el esquema Matsumoto-Imai, siendo esta idea la linearizacion de ecuaciones. El esquema BOV se basa principalmente en dos problemas, MQ e IP: Dado y un set de polinomios cuadraticos multivariables tal que \\begin{equation} P(X) = (p_{1}(X), …, p_{m}(X)) \\end{equation} con un vector de variables. El MQ-problem consiste en encontrar tal que \\begin{equation} P(X) = (p_{1}(X), …, p_{m}(X)) = Y \\end{equation} MQ-problem es NP-completo. Sean dos set de polinomios, y , de polinomios y variables, el IP-problem consiste en encontras dos transformaciones lineales afines, y , tales que \\begin{equation} P = L_{1} \\circ \\overline{P} \\circ L_{2} \\end{equation} No se cree que este problema se pueda solucionar en tiempo polinomial, pero tampoco pertenece a la clase NP-hard. Construccion El esquema BOV se basa en la dificultad de los problemas MQ e IP, para ello define dos sets de polinomios, y , donde ambos sets continen polinomios multivariables cuadraticos de variables, donde puede contener cualquier polinomio, pero contiene polinomios especiales, los cuales facilitaran el uso de la llave privada. La relacion entre estos dos sets de polinomios esta dada por las transformaciones afines invertibles y tal que: \\begin{equation} P = L_{1} \\circ \\overline{P} \\circ L_{2} \\end{equation} Teniendo en cuenta lo anterior, podemos definir las llaves publicas y privadas como: Llave publica: set de polinomios cuadraticos Llave privada: set de polinomios cuadraticos , y las transformaciones afines y . La idea es utilizar la clave privada para firmar algun mensaje , y utilizar la dificultad del problema MQ para que no se pueda falsificar una firma a traves de la llave publica . Con esto solo falta definir para ser utilizado como la llave privada. La construccion de los polinomios en el set se basa en separar las variables en dos conjuntos, las variables oil y vinegar, y definir el polinomio de forma especial. Sean las variables oil y las variables vinegar , tal que y , el polinomio esta definido como: \\begin{equation} p_{i}(X, Z) = \\sum\\limits_{h=1}^o \\sum\\limits_{j=1}^v \\alpha_{h,j}^{(i)}x_{h}z_{j} + \\sum\\limits_{j=1}^v (\\beta_{j}^{(i)}z_{j}^{2} + \\gamma_{j}^{(i)}z_{j}) + \\sum\\limits_{h=1}^o \\delta_{h}^{(i)}x_{h} + \\eta^{(i)} \\end{equation} Firma y verificación Una vez definido el set de polinomios , las transformaciones afines y , y la llave publica , podemos empezar a definir el proceso de firma y verificacion. Verificacion Dado un mensaje y una firma , verificar si la firma corresponde al mensaje, basta con determinar si: \\begin{equation} P(X) = Y \\end{equation} Firma El proceso de firma es un poco mas complejo, dado que tenemos el mensaje , queremos encontrar una firma tal que: \\begin{equation} L_{1} \\circ \\overline{P} \\circ L_{2} (X) = Y \\end{equation} Primero, invertimos la transformacion afin , con lo cual tenemos \\begin{equation} \\hat{Y} = L_{1}^{-1}(Y) \\end{equation} Ahora, necesitamos encontrar un tal que \\begin{equation} \\overline{P}(\\hat{X}) = \\hat{Y} \\end{equation} Para ello, nos aprovechamos de la construccion de los polinomios en y como interactuan las variables oil y vinegar, para lo cual, elegimos valores aleatorios dentro del espacio finito que asignamos a las variables vinegar. Producto de la construccion de los polinomios, el asignar valores a las variables vinegar produce que los polinomios pase a ser polinomios multivariables lineales, los cuales son posibles de resolver (eliminacion gaussiana) con una alta probabilidad (en el caso que no se pueda resolver, se repite el proceso) Finalmente, una vez obtenido un valor para , invertimos la ultima transformacion, con lo cual \\begin{equation} X = L_{2}^{-1}(\\hat{X}) \\end{equation} siendo la firma del mensaje . Unbalanced Oil and Vinegar Si bien el esquema BOV a primera vista pareciera ser muy robusto, este no es el caso, ya que fue quebrado poco despues de ser propuesto. Este ataque (Kipnis &amp; Shamir) se aprovecho de la igualdad , logrando recuperar una copia isomorfa de la clave privada. Frente a este ataque se tiene dos opciones, elegimos ó . El segundo caso no es posible, ya que se puede utilizar el mismo ataque para lograr obtener la clave, mientras que, la primera opcion, si bien puede ser atacada, este seria una versión probabilistica del ataque original, y su complejidad es del orden , siendo el tamaño del espacio finito. Eligiendo el segundo caso, llegamos a la variante Unbalanced Oil and Vinegar, la cual tiene , siendo la diferencia entre ambos lo suficiente como para que el ataque anterior no sea factible. Ahora, teniendo un esquema que es seguro (hasta el momento), nos falta responder la pregunta ¿Es eficiente este esquema?, y la respuesta es no, este esquema no es eficiente en el sentido del tamaño de las claves. Es facil ver que, solo en la llave privada, esta es del orden de en memoria para , para y para el set de polinomios . Sabiendo lo anterior, ¿Se podra mejorar este esquema criptografico?"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"post-quantic-rainbow-implementation": {
+						"id": "post-quantic-rainbow-implementation",
+						"title": "Implementación de Rainbow en el Lenguaje Kotlin",
+						"category": "",
+						"url": " /post-quantic/rainbow-implementation/",
+						"content": "En esta sección se explicará más en detalle la implementación realizada, pero de momento solo se provee un link al repositorio de la implementación."
 					}
 
 					
@@ -157,7 +176,7 @@
 						"title": "Rainbow",
 						"category": "",
 						"url": " /post-quantic/rainbow/",
-						"content": ""
+						"content": "Anteriormente, se vio el esquema Balanced Oil and Vinegar, el cual ya ha sido roto, y su variante Unbalanced Oil and Vinegar, que aun no ha sido roto. De la misma manera, tambien se vio que el esquema UOV no es un esquema muy eficiente, debido a lo grande que pueden llegar a ser las claves que utiliza, es por ello que se desarrollo una nueva variante, la cual se denomina Rainbow. Idea general El problema principal de UOV es lo masivo que pueden llegar a ser la claves usadas, por lo que el principal objetivo del esquema Rainbow es reducir el tamaño de las llaves, para ello, Rainbow modifica el set de polinomios utilizado en UOV. La modificacion que se realiza consiste en separar los polinomios del set en distintas capaz, donde la cantidad de variables utilizadas en una capa es menor a la cantidad de variables utilizadas en la siguiente capa. La idea central de Rainbow es el de calcular las variables de una capa, y estos resultados utilizarlos para calcular las variables que se encuentran en la siguiente capa, y para ello, en cada capa se resuelven los polinomios como si fuera un firma del esquema UOV. Llaves Manteniendo las llaves usadas en UOV, sean las transformaciones afines y y los sets de polinomios y , tales que \\begin{equation} P = L_{1} \\circ \\overline{P} \\circ L_{2} \\end{equation} Entonces las llaves privadas y publicas son: Llave publica: set de polinomios cuadraticos . Llave privada: set de polinomios cuadraticos , y las transformaciones afines y . Firma y verificacion Una vez definido el set de polinomios , las transformaciones afines y , y la llave publica , podemos empezar a definir el proceso de firma y verificacion. Verificación Al igual que en BOV y UOV, la verificacion de una firma y un mensaje se realiza al evaluar la firma con la llave publica, y comprobar la igualdad \\begin{equation} P(X) = Y \\end{equation} Firma Se mantiene la idea de calcular la firma a partir de resolver las mismas ecuaciones que en UOV: Calcular , con Calcular , con Calcular , con Donde es la firma del mensaje . Es en la parte 2 del calculo de la firma la cual tiene una gran diferencia con BOV y UOV."
 					}
 
 					

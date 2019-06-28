@@ -9,15 +9,15 @@
 <title>Rainbow | Crypto Blog</title>
 <meta name="generator" content="Jekyll v3.8.4" />
 <meta property="og:title" content="Rainbow" />
-<meta name="author" content="Alejandro González" />
+<meta name="author" content="Alejandro González y Thibault Swysen" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Blog educativo sobre Criptografía" />
-<meta property="og:description" content="Blog educativo sobre Criptografía" />
+<meta name="description" content="Anteriormente, se vio el esquema Balanced Oil and Vinegar, el cual ya ha sido roto, y su variante Unbalanced Oil and Vinegar, que aun no ha sido roto. De la misma manera, tambien se vio que el esquema UOV no es un esquema muy eficiente, debido a lo grande que pueden llegar a ser las claves que utiliza, es por ello que se desarrollo una nueva variante, la cual se denomina Rainbow." />
+<meta property="og:description" content="Anteriormente, se vio el esquema Balanced Oil and Vinegar, el cual ya ha sido roto, y su variante Unbalanced Oil and Vinegar, que aun no ha sido roto. De la misma manera, tambien se vio que el esquema UOV no es un esquema muy eficiente, debido a lo grande que pueden llegar a ser las claves que utiliza, es por ello que se desarrollo una nueva variante, la cual se denomina Rainbow." />
 <link rel="canonical" href="http://localhost:4000/post-quantic/rainbow/" />
 <meta property="og:url" content="http://localhost:4000/post-quantic/rainbow/" />
 <meta property="og:site_name" content="Crypto Blog" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Alejandro González"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/siteicon.png"},"name":"Alejandro González"},"description":"Blog educativo sobre Criptografía","@type":"Article","url":"http://localhost:4000/post-quantic/rainbow/","headline":"Rainbow","@context":"http://schema.org"}</script>
+{"author":{"@type":"Person","name":"Alejandro González y Thibault Swysen"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/siteicon.png"},"name":"Alejandro González y Thibault Swysen"},"description":"Anteriormente, se vio el esquema Balanced Oil and Vinegar, el cual ya ha sido roto, y su variante Unbalanced Oil and Vinegar, que aun no ha sido roto. De la misma manera, tambien se vio que el esquema UOV no es un esquema muy eficiente, debido a lo grande que pueden llegar a ser las claves que utiliza, es por ello que se desarrollo una nueva variante, la cual se denomina Rainbow.","@type":"Article","url":"http://localhost:4000/post-quantic/rainbow/","headline":"Rainbow","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 		<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Crypto Blog" />
@@ -67,6 +67,8 @@
 								
 									<li class="nav-item current"><a href="/post-quantic/rainbow/">Rainbow</a></li>
 								
+									<li class="nav-item "><a href="/post-quantic/rainbow-implementation/">Implementación de Rainbow en el Lenguaje Kotlin</a></li>
+								
 							</ul>
 						</li>
 					
@@ -90,7 +92,53 @@
 				<h3>Rainbow</h3>
 			</div>
 			<article class="content">
-				
+				<p>Anteriormente, se vio el esquema Balanced Oil and Vinegar, el cual ya ha sido roto, y su variante Unbalanced Oil and Vinegar, que aun no ha sido roto. De la misma manera, tambien se vio que el esquema UOV no es un esquema muy eficiente, debido a lo grande que pueden llegar a ser las claves que utiliza, es por ello que se desarrollo una nueva variante, la cual se denomina Rainbow.</p>
+
+<h1 id="idea-general">Idea general</h1>
+
+<p>El problema principal de UOV es lo masivo que pueden llegar a ser la claves usadas, por lo que el principal objetivo del esquema Rainbow es reducir el tamaño de las llaves, para ello, Rainbow modifica el set de polinomios <script type="math/tex">\overline{P}</script> utilizado en UOV.</p>
+
+<p>La modificacion que se realiza consiste en separar los polinomios del set en distintas capaz, donde la cantidad de variables utilizadas en una capa es menor a la cantidad de variables utilizadas en la siguiente capa.</p>
+
+<p>La idea central de Rainbow es el de calcular las variables de una capa, y estos resultados utilizarlos para calcular las variables que se encuentran en la siguiente capa, y para ello, en cada capa se resuelven los polinomios como si fuera un firma del esquema UOV.</p>
+
+<h2 id="llaves">Llaves</h2>
+
+<p>Manteniendo las llaves usadas en UOV, sean las transformaciones afines <script type="math/tex">L_{1}</script> y <script type="math/tex">L_{2}</script> y los sets de polinomios <script type="math/tex">P</script> y <script type="math/tex">\overline{P}</script>, tales que</p>
+
+<p>\begin{equation}
+	P = L_{1} \circ \overline{P} \circ L_{2}
+\end{equation}</p>
+
+<p>Entonces las llaves privadas y publicas son:</p>
+
+<ul>
+  <li>Llave publica: set de polinomios cuadraticos <script type="math/tex">P</script>.</li>
+  <li>Llave privada: set de polinomios cuadraticos <script type="math/tex">\overline{P}</script>, y las transformaciones afines <script type="math/tex">L_{1}</script> y <script type="math/tex">L_{2}</script>.</li>
+</ul>
+
+<h2 id="firma-y-verificacion">Firma y verificacion</h2>
+
+<p>Una vez definido el set de polinomios <script type="math/tex">\overline{P}</script>, las transformaciones afines <script type="math/tex">L_{1}</script> y <script type="math/tex">L_{2}</script>, y la llave publica <script type="math/tex">P = L_{1} \circ \overline{P} \circ L_{2}</script>, podemos empezar a definir el proceso de firma y verificacion.</p>
+
+<ol>
+  <li>Verificación
+ Al igual que en BOV y UOV, la verificacion de una firma <script type="math/tex">X</script> y un mensaje <script type="math/tex">Y</script> se realiza al evaluar la firma con la llave publica, y comprobar la igualdad</li>
+</ol>
+
+<p>\begin{equation}
+ 	P(X) = Y
+ \end{equation}</p>
+
+<ol>
+  <li>Firma
+ Se mantiene la idea de calcular la firma a partir de resolver las mismas ecuaciones que en UOV:</li>
+  <li>Calcular <script type="math/tex">\hat{Y}</script>, con <script type="math/tex">\hat{Y} = L_{1}^{-1}Y</script></li>
+  <li>Calcular <script type="math/tex">\hat{X}</script>, con <script type="math/tex">\overline{P}(\hat{X}) = \hat{Y}</script></li>
+  <li>Calcular <script type="math/tex">X</script>, con <script type="math/tex">X = L_{2}^{-1} \hat{X}</script></li>
+</ol>
+
+<p>Donde <script type="math/tex">X</script> es la firma del mensaje <script type="math/tex">Y</script>. Es en la parte 2 del calculo de la firma la cual tiene una gran diferencia con BOV y UOV.</p>
 
 			</article>
 		</section>
