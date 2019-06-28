@@ -132,13 +132,38 @@
 
 <ol>
   <li>Firma
- Se mantiene la idea de calcular la firma a partir de resolver las mismas ecuaciones que en UOV:</li>
-  <li>Calcular <script type="math/tex">\hat{Y}</script>, con <script type="math/tex">\hat{Y} = L_{1}^{-1}Y</script></li>
-  <li>Calcular <script type="math/tex">\hat{X}</script>, con <script type="math/tex">\overline{P}(\hat{X}) = \hat{Y}</script></li>
-  <li>Calcular <script type="math/tex">X</script>, con <script type="math/tex">X = L_{2}^{-1} \hat{X}</script></li>
+ Se mantiene la idea de calcular la firma a partir de resolver las mismas ecuaciones que en UOV:
+    <ul>
+      <li>Calcular <script type="math/tex">\hat{Y}</script>, con <script type="math/tex">\hat{Y} = L_{1}^{-1}Y</script></li>
+      <li>Calcular <script type="math/tex">\hat{X}</script>, con <script type="math/tex">\overline{P}(\hat{X}) = \hat{Y}</script></li>
+      <li>Calcular <script type="math/tex">X</script>, con <script type="math/tex">X = L_{2}^{-1} \hat{X}</script></li>
+    </ul>
+  </li>
 </ol>
 
 <p>Donde <script type="math/tex">X</script> es la firma del mensaje <script type="math/tex">Y</script>. Es en la parte 2 del calculo de la firma la cual tiene una gran diferencia con BOV y UOV.</p>
+
+<p>Como se dijo anteriormente, la idea de Rainbow es aplicar UOV capa por capa, para ello definimos los valores <script type="math/tex">v_{i}</script>, <script type="math/tex">1 \leq i \leq u</script>, con <script type="math/tex">u-1</script> la cantidad de capas en Rainbow, y donde los valores <script type="math/tex">v_{i}</script> cumplen</p>
+
+<p>\begin{equation}
+ 	0 \lt v_{1} \lt … \lt v_{u} = n
+ \end{equation}</p>
+
+<p>Adicionalmente, definimos los valores <script type="math/tex">o_{i}</script>, <script type="math/tex">1 \leq i \leq u</script>, de forma tal que</p>
+
+<p>\begin{equation}
+ 	o_{i} = v_{i+1} - v_{i}
+ \end{equation}</p>
+
+<p>A partir de los valores definidos anteriormente, podemos definir lo que son las capas dentro del esquema:</p>
+<ol>
+  <li>El esquema posee <script type="math/tex">u-1</script> capas.</li>
+  <li>La i-esima capa esta compuesta por <script type="math/tex">o_{i}</script> polinomios.</li>
+  <li>Todos los polinomios dentro de la i-esima capa tienen <script type="math/tex">v_{i+1}</script> variables, donde las primeras <script type="math/tex">v_{i}</script> corresponde a variables vinegar y las siguientes o_{i} variables son variables oil.</li>
+  <li>Las <script type="math/tex">v_{i+1}</script> variables dentro de la i-esima capa, son variables vinegar dentro de la (i+1)-esima capa.</li>
+</ol>
+
+<p>Con las capas ya definidas, podemos explicar el procedimiento con el cual se resuelve la ecuacion $$\overline{P}(\hat{X}) = \hat{Y}</p>
 
 			</article>
 		</section>

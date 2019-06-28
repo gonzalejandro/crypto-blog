@@ -12,9 +12,8 @@ hallar una implementación en el lenguaje de programación Kotlin, del
 Esquema Polinomial Multivariable de Firmas "Rainbow", basado en otro 
 esquema del mismo  tipo llamado "Oil and Vinegar".
 
-
 ## Tabla de Contenidos
-1. Criptografía Post Cuántica
+1. Criptografía Post Cuántica (<a href="https://docs.google.com/presentation/d/1k3mSq99W9ehDK8HShegAhEnkVLECGMP0oX5VFHGP2mI/edit?usp=sharing" target="_blank">ver presentación</a>)
     1. [Introducción](/post-quantic/introduccion/)
     2. [Criptografía de Llave Pública Multivariable](/post-quantic/multivariate-public-key-cryptography/)
     3. [Oil and Vinegar](/post-quantic/oil-and-vinegar/)
