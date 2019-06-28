@@ -52,7 +52,7 @@ La idea es utilizar la clave privada para firmar algun mensaje $$y$$, y utilizar
 La construccion de los polinomios en el set $$\overline{P}$$ se basa en separar las variables en dos conjuntos, las variables oil y vinegar, y definir el polinomio de forma especial. Sean las variables oil $$X = (x_{1}, ..., x_{o})$$ y las variables vinegar $$Z = (z_{1}, ..., z_{v})$$, tal que $$n = o + v$$ y $$o = v$$, el polinomio $$p_{i} \in \overline{P}$$ esta definido como:
 
 \begin{equation}
-	p_{i}(X, Z) = \sum\limits_{h=1}^o \sum\limits_{j=1}^v \alpha_{h,j}^{(i)}x_{h}z_{j} + \sum\limits_{j=1}^v (\beta_{j}^{(i)}z_{j}^{2} + \gamma_{j}^{(i)}z_{j}) + \sum\limits_{h=1}^o \delta_{h}^{(i)}x_{h} + \eta^{(i)}
+	p_{i}(X, Z) = \sum\limits_{h=1}^o \sum\limits_{j=1}^v \alpha_{h,j}^{(i)}x_{h}z_{j} + \sum\limits_{j=1}^v \sum\limits_{h=j}^v (\beta_{j}^{(i)}z_{j}z_{h} + \gamma_{j}^{(i)}z_{j}) + \sum\limits_{h=1}^o \delta_{h}^{(i)}x_{h} + \eta^{(i)}
 \end{equation}
 
 ## Firma y verificación

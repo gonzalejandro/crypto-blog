@@ -6,7 +6,7 @@ order: 4
 
 Anteriormente, se vio el esquema Balanced Oil and Vinegar, el cual ya ha sido roto, y su variante Unbalanced Oil and Vinegar, que aun no ha sido roto. De la misma manera, tambien se vio que el esquema UOV no es un esquema muy eficiente, debido a lo grande que pueden llegar a ser las claves que utiliza, es por ello que se desarrollo una nueva variante, la cual se denomina Rainbow.
 
-# Idea general
+## Idea general
 
 El problema principal de UOV es lo masivo que pueden llegar a ser la claves usadas, por lo que el principal objetivo del esquema Rainbow es reducir el tamaño de las llaves, para ello, Rainbow modifica el set de polinomios $$\overline{P}$$ utilizado en UOV.
 
@@ -66,3 +66,19 @@ Una vez definido el set de polinomios $$\overline{P}$$, las transformaciones afi
 
  Con las capas ya definidas, podemos explicar el procedimiento con el cual se resuelve la ecuacion $$\overline{P}(\hat{X}) = \hat{Y}$$. El procedimiento consiste en ir capa por capa resolviendo un sistema de ecuaciones del tipo visto en BOV y UOV.
 
+ Consideremos la primera capa, la cual tiene $$o_{1}$$ polinomios que tiene a las primeras $$v_{2}$$ variables, donde, las primeras $$v_{1}$$ son variables vinegar y las siguientes $$o_{1}$$ variables son del tipo oil. Para esta capa, tratamos de resolver el sistema de ecuaciones
+
+ \begin{equation}
+ 	\overline{P}(x_{1}, ..., x{v_{1}}, x_{v_{1}+1}, ..., x_{v_2}) = Y[1, o_{1}]
+ \end{equation} 
+
+ Donde Y[i, j] representa el vector con los bloques en posicion i hasta j en el mensaje Y.
+ Para esta capa, resolvemos el sistame de ecuaciones de la misma forma que durante UOV, las variables vinegars las elegimos de forma aleatoria, y luego resolvemos el sistema de ecuaciones lineales resultante para obtener el valor para las variables oil.
+
+ Luego de terminar de obtener los valores para las variables en la primera capa, utilizamos estos valores para fijarlos como los valores de las variables vinegars de la segunda capa (recordar el punto 4 descrito anteriormente), al hacer esto podemos obtener valores para las variables oil de la segunda capa, y repetir el procedimiento para las capas restantes.
+
+ Finalmente, despues de terminar de calcular $$\hat{X}$$ para la ecuacion $$\overline{P}(\hat{X}) = \hat{Y}$$, aplicando el inverso de la transformacion afin $$L_{2}$$ sobre $$\hat{X}$$, obtenemos la firma $$X$$.
+
+## Tamaño de la firma
+
+Como se dijo, uno de los objetivos del esquema Rainbow, es el de disminuir el tamaño de la firma $$X$$ para un mensaje $$Y$$ de tamaño $$m$$, para comprobar esto, consideremos que la cantidad total de polinomios presentes en el set de polinomios $$\overline{P}$$
