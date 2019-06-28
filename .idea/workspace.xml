@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41e1a9b2-6b6a-4f6d-8662-3735169e9efc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_docs/post-quantic/multivariate-public-key-cryptography.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_docs/post-quantic/oil-and-vinegar.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_docs/post-quantic/rainbow.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_docs/quantic/introduction.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/2016/01/12/media-support/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/2016/01/12/media-support/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/2016/02/05/general-fixes-and-improvements/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/2016/02/05/general-fixes-and-improvements/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/changelog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/changelog/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/feed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/feed.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/post-quantic/introduccion/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/post-quantic/introduccion/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/search/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/search/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,6 +27,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_layouts/default.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="11" column="125" selection-start-line="11" selection-start-column="125" selection-end-line="11" selection-end-column="125" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_docs/post-quantic/introduccion.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
@@ -58,7 +55,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="40">
-                <caret line="2" column="36" lean-forward="true" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+                <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -67,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_docs/post-quantic/rainbow.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
@@ -107,6 +104,7 @@
         <option value="$PROJECT_DIR$/_docs/post-quantic/multivariate-public-key-cryptography.md" />
         <option value="$PROJECT_DIR$/_docs/post-quantic/oil-and-vinegar.md" />
         <option value="$PROJECT_DIR$/_docs/post-quantic/rainbow.md" />
+        <option value="$PROJECT_DIR$/_layouts/default.html" />
       </list>
     </option>
   </component>
@@ -143,19 +141,7 @@
             <path>
               <item name="crypto-blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="crypto-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="_docs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crypto-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crypto-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="_docs" type="462c0819:PsiDirectoryNode" />
-              <item name="post-quantic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crypto-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crypto-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="_docs" type="462c0819:PsiDirectoryNode" />
-              <item name="quantic" type="462c0819:PsiDirectoryNode" />
+              <item name="_layouts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -165,6 +151,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -192,12 +179,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561696485624</updated>
-      <workItem from="1561696486929" duration="788000" />
+      <workItem from="1561696486929" duration="1177000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="788000" />
+    <option name="totallyTimeSpent" value="1177000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
@@ -226,16 +213,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_docs/_defaults.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_docs/quantic/introduction.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
@@ -276,7 +253,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="40">
-            <caret line="2" column="36" lean-forward="true" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+            <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
@@ -293,6 +270,23 @@
           <second_editor>
             <markdownNavigatorState />
           </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_docs/_defaults.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_layouts/default.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="125" selection-start-line="11" selection-start-column="125" selection-end-line="11" selection-end-column="125" />
         </state>
       </provider>
     </entry>
