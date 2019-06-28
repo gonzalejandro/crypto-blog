@@ -29,3 +29,19 @@ Entonces las llaves privadas y publicas son:
 
 ## Firma y verificacion
 
+Una vez definido el set de polinomios $$\overline{P}$$, las transformaciones afines $$L_{1}$$ y $$L_{2}$$, y la llave publica $$P = L_{1} \circ \overline{P} \circ L_{2}$$, podemos empezar a definir el proceso de firma y verificacion.
+
+ 1. Verificación
+ Al igual que en BOV y UOV, la verificacion de una firma $$X$$ y un mensaje $$Y$$ se realiza al evaluar la firma con la llave publica, y comprobar la igualdad
+
+ \begin{equation}
+ 	P(X) = Y
+ \end{equation}
+
+ 2. Firma
+ Se mantiene la idea de calcular la firma a partir de resolver las mismas ecuaciones que en UOV:
+  1. Calcular $$\hat{Y}$$, con $$\hat{Y} = L_{1}^{-1}Y$$
+  2. Calcular $$\hat{X}$$, con $$\overline{P}(\hat{X}) = \hat{Y}$$
+  3. Calcular $$X$$, con $$X = L_{2}^{-1} \hat{X}$$
+
+ Donde $$X$$ es la firma del mensaje $$Y$$. Es en la parte 2 del calculo de la firma la cual tiene una gran diferencia con BOV y UOV.
